@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change text</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        div{
+           
+           width:  550px;
+            margin: auto;
+        
+        }
+        h1{
+            text-align: center;
+            /* color: white; */
+        }
+        textarea{
+    
+            margin-top: 13px;
+            /* margin: auto; */
+            color: white;
+            font: 500;
+            font-size: 1.3rem;
+            width: 500px;
+            height: 300px;
+            outline: none;
+            background-color: blue;
+            border: none;
+            box-shadow: -8px 11px 11px -10px rgba(0,0,0,1);
+        }
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        button{
+            font-size: 1rem;
+            padding: 10px;
+            margin-top: 14px;
+           
+            
+        }
+        
+    </style>
+</head>
+<body>
+<h1>Converting Text to UpperCase and LowerCase</h1>
+    <div>
+        <textarea name="" id="txt" placeholder="Enter the text"></textarea>
+        <div class="buttons">
+            <button id="btn" onclick="upper()">To Upper Case</button>
+            <button id="btn1" onclick="lower()">To Lower Case</button>
+            <button id="btn2" onclick="ChngColor()">Change Background Color</button>
+        </div>
+        
+    </div>
+    
+        
+    
+</body>
+
+<script>
+   
+    function upper(){
+    var str = document.getElementById('txt').value 
+
+  // to check the input field is empty then print alert
+    if(!str)
+        alert("Enter the data you want to change!!!!!")
+
+    document.getElementById('txt').value = str.toUpperCase();
+    }
+
+    function lower(){
+        var s = document.getElementById('txt').value 
+        
+        // to check the input field is empty then print alert
+        if(!s)
+        alert("Enter the data you want to change!!!!!");
+
+    document.getElementById('txt').value = s.toLowerCase();
+    }
+
+    function ChngColor(){
+        const button = document.getElementById("btn2");
+        const textArea = document.getElementById("txt");
+        const text = document.getElementById("txt").value;
+        const hexval = Math.floor(Math.random() * 0xffffff).toString(16);
+        // text.style.color = `#${hexval}`;
+        textArea.style.background = `#${hexval}`;
+
+    }
+
+</script>
+</html>
